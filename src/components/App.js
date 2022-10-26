@@ -5,10 +5,10 @@ import Sidebar from "./Sidebar";
 import Login from "./Login";
 import { Route, Routes } from "react-router-dom";
 
-
 function App() {
   return (
-<div className="App">
+    <Login></Login>
+    /* <div className="App">
     <Navigation />
     <main>
       <div className="container">
@@ -16,7 +16,7 @@ function App() {
         <Sidebar />
       </div>
    </main> 
-   </div>
+   </div> */
   );
 }
 
