@@ -1,21 +1,16 @@
 import "../styles/App.scss";
-import Header from "./Header";
-import Cards from "./Cards";
-import Sidebar from "./Sidebar";
-import Footer from "./Footer";
-import Login from "../components/Login.js"
+import Login from "../components/Account/Login";
 import { Route, Routes } from "react-router-dom";
-import Register from "./Register";
+import Register from "../components/Account/Register.js";
 import MainSns from "./MainSns";
-
 
 function App() {
   return (
-    <Login></Login>
+    //<Login></Login>
     // <main>
     // <Register></Register>
     // </main>
-    // <MainSns></MainSns>
+    <MainSns></MainSns>
   );
 }
 

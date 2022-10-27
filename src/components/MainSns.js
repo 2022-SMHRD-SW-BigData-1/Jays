@@ -1,15 +1,13 @@
 import "../styles/App.scss";
-import Header from "./Header";
-import Cards from "./Cards";
-import Sidebar from "./Sidebar";
-import Footer from "./Footer";
-import Login from "../components/Login.js"
+import Header from "../components/JobSns/Header";
+import Cards from "../components/JobSns/Cards";
+import Sidebar from "../components/JobSns/Sidebar";
+import Footer from "../components/JobSns/Footer";
 import { Route, Routes } from "react-router-dom";
-import Register from "./Register";
+import Register from "../components/Account/Register";
 
-function MainSns(){
-    return(
-       
+function MainSns() {
+  return (
     <div className="App">
       <Header />
       <main>
@@ -20,7 +18,6 @@ function MainSns(){
       </main>
       <Footer />
     </div>
-        
-    );
+  );
 }
 export default MainSns;
