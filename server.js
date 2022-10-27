@@ -28,7 +28,7 @@ app.use(
   session({
     secret: "smart",
     resave: false,
-    saveUninitializedt: true,
+    saveUninitialized: true,
     store: SMS,
   })
 );

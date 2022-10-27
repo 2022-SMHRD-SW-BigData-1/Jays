@@ -28,7 +28,7 @@ let conn = mysql.createConnection({
 //   });
 // });
 
-router.post("/signin", (req, res) => {
+router.post("/login", (req, res) => {
   // View (React) => router로 데이텅 보내기
   console.log("join router", req.body.email);
   console.log("join router", req.body.pw);
@@ -39,10 +39,14 @@ router.post("/signin", (req, res) => {
   let sql = "select mb_id, mb_nick from t_member where mb_id = ? and mb_pw = ?";
 
   conn.query(sql, [email, pw], function (err, rows) {
-    if (!err) {
-      console.log("DB로그인 접속 성공");
+    if (rows.length > 0) {
+      console.log("문제없음");
+      res.json({
+        email: email,
+      });
     } else {
-      console.log("로그인 DB접속 실패", err);
+      console.log("문제존나많아 앙기철ㄸㄸㄸㄸ", err);
+      throw err;
     }
   });
 });
