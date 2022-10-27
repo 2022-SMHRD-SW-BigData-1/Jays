@@ -10,6 +10,7 @@ import MyProfile from "./Account/MyProfile";
 function App() {
   return (
     <>
+      <MainSns></MainSns>
       <Routes>
         <Route path="/pro" element={<MyProfile></MyProfile>}></Route>
         <Route path="/" element={<Login></Login>}></Route>
