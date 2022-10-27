@@ -1,10 +1,18 @@
 import ProfileIcon from "../JobSns/ProfileIcon";
+import Profile from "../JobSns/Profile";
 import Header from "../JobSns/Header";
 import Footer from "../JobSns/Footer";
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import { experimentalStyled as styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import '../../styles/Account/Myprofile.scss'
+
+
 
 const itemData = [
   {
@@ -57,29 +65,36 @@ const itemData = [
   },
 ];
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(2),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 function MyProfile(){
     return(
         <>
-            
             <Header/>
-            <Box sx={{ 
-                    marginTop: 10,
-                    marginLeft:85}}>
-            <ProfileIcon></ProfileIcon>
-            <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
-                {itemData.map((item) => (
-                <ImageListItem key={item.img}>
-                <img
-                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-                />
-                </ImageListItem>
-                ))}
-             </ImageList>
-             </Box>
+            <React.Fragment>
+              <Container>
+                <Box sx={{ bgcolor: 'white', height: '100vh', marginTop :10}}>
+                  <br></br>
+                  <Box sx={{marginLeft:4}}>
+                  <Profile></Profile>
+                  </Box>
+                  <hr></hr>
+                  <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                   {Array.from(Array(6)).map((_, index) => (
+                    <Grid item xs={2} sm={4} md={4} key={index}>
+                    <img src={itemData[1].img} width='300px' className="imgs"></img>
+                    </Grid>
+                    ))}
+                  </Grid>
+                </Box>
+              </Container>
+            </React.Fragment>
             <Footer/>
         </>
     )
