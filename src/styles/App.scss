@@ -1,4 +1,4 @@
-@import "variables";
+@import "./variables";
 
 body {
   background-color: $background-white;
@@ -10,7 +10,7 @@ body {
 }
 
 main {
-  background-color: $background-grey;
+  background-color: $background-blue;
   margin-top: 60px;
 
   .container {

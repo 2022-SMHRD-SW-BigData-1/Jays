@@ -1,22 +1,19 @@
 import "../styles/App.scss";
-import Navigation from "./Navigation";
-import Cards from "./Cards";
-import Sidebar from "./Sidebar";
-import Login from "./Login";
+import Login from "../components/Account/Login";
 import { Route, Routes } from "react-router-dom";
+import Register from "../components/Account/Register.js";
+import MainSns from "./MainSns";
+import MyProfile from "./Account/MyProfile";
 
 function App() {
   return (
-    <Login></Login>
-    /* <div className="App">
-    <Navigation />
-    <main>
-      <div className="container">
-        <Cards />
-        <Sidebar />
-      </div>
-   </main> 
-   </div> */
+    <MyProfile></MyProfile>
+    // <Routes>
+    //   <Route path='/' element={<Login></Login>}></Route>
+    //   <Route path='/register' element={<Register></Register>}></Route>
+    //   <Route path='/mainsns' element={<MainSns></MainSns>}></Route>
+    // </Routes>
+ 
   );
 }
 
