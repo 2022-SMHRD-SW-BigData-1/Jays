@@ -6,17 +6,20 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
+
 // import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 // import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import logo from "../../images/jobsnsLogo.png";
 import phone from "../../images/phone.png";
+
 import { useState } from "react";
 import axios from "axios";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import Login from "../../styles/Account/Login.scss";
 
 function Copyright(props) {
@@ -65,99 +68,98 @@ export default function Logins() {
       .catch(() => {
         console.log("문제발생");
       });
-  };
 
-  return (
-    <>
-      <ThemeProvider theme={theme}>
-        <Container component="main">
-          <CssBaseline />
-          <Box
-            sx={{
-              marginTop: 0,
-              display: "flex",
-              flexDirection: "row",
-              backgroundColor: "white",
-            }}
-          >
-            <img src={phone} className="loginMain"></img>
+    return (
+      <>
+        <ThemeProvider theme={theme}>
+          <Container component="main">
+            <CssBaseline />
             <Box
               sx={{
-                marginTop: 15,
-                marginRight: 500,
-                marginLeft: 3,
+                marginTop: 0,
                 display: "flex",
-                flexDirection: "column",
-                alignItems: "centre",
+                flexDirection: "row",
+                backgroundColor: "white",
               }}
             >
+              <img src={phone} className="loginMain"></img>
               <Box
                 sx={{
-                  marginTop: 2,
+                  marginTop: 15,
+                  marginRight: 500,
+                  marginLeft: 3,
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "left",
+                  alignItems: "centre",
                 }}
               >
-                <img src={logo} width="300px"></img>
-              </Box>
-
-              <Box
-                component="form"
-                onSubmit={handleSubmit}
-                noValidate
-                sx={{ mt: 1, marginTop: 4 }}
-              >
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  autoFocus
-                />
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  onChange={(e) => setPw(e.target.value)}
-                  autoComplete="current-password"
-                />
-                <FormControlLabel
-                  control={<Checkbox value="remember" color="primary" />}
-                  label="Remember me"
-                />
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
+                <Box
+                  sx={{
+                    marginTop: 2,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "left",
+                  }}
                 >
-                  Sign In
-                </Button>
-                <br></br>
+                  <img src={logo} width="300px"></img>
+                </Box>
 
-                <Link href="#" variant="body2">
-                  비밀번호를 잊으셨나요?
-                </Link>
-                <br></br>
-                <br></br>
-                <Link href="#" variant="body1">
-                  {"Don't have an account ?  Resgister"}
-                </Link>
-                <Copyright sx={{ mt: 8, mb: 4 }} />
+                <Box
+                  component="form"
+                  onSubmit={handleSubmit}
+                  noValidate
+                  sx={{ mt: 1, marginTop: 4 }}
+                >
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    autoFocus
+                  />
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    onChange={(e) => setPw(e.target.value)}
+                  />
+                  <FormControlLabel
+                    control={<Checkbox value="remember" color="primary" />}
+                    label="Remember me"
+                  />
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                  >
+                    Sign In
+                  </Button>
+                  <br></br>
+
+                  <Link href="#" variant="body2">
+                    비밀번호를 잊으셨나요?
+                  </Link>
+                  <br></br>
+                  <br></br>
+                  <Link href="#" variant="body1">
+                    {"Don't have an account ?  Resgister"}
+                  </Link>
+                  <Copyright sx={{ mt: 8, mb: 4 }} />
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </Container>
-      </ThemeProvider>
-    </>
-  );
+          </Container>
+        </ThemeProvider>
+      </>
+    );
+  };
 }

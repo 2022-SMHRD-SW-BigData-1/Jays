@@ -63,7 +63,11 @@ export default function Register() {
             flexDirection: "column",
             alignItems: "center",
           }}
+<<<<<<< HEAD
         ><br></br>
+=======
+        >
+>>>>>>> 90130fd749824a463945bf1eee6e52e44330901e
           <img src={Logo} width="300px"></img>
           <Typography component="h1" variant="h5">
           </Typography>

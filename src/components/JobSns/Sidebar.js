@@ -8,6 +8,12 @@ import image from "../../images/profile.jpg";
 function Sidebar() {
   return (
     <Sticky topOffset={-80}>
+      <div className="sidebar_navigation">
+        <div className="sidebar_container">
+          <div className="container_Special">Special</div>
+          <div className="container_Graph">Graph</div>
+        </div>
+      </div>
       <div className="sidebar">
         <Profile
           username="aleks.popovic"
